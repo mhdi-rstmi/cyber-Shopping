@@ -1,0 +1,16 @@
+.prev-arrow::after {
+  content: "<";
+}
+
+.next-arrow::after {
+  content: ">";
+}
+
+.slide {
+  background-color: #ededed !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
