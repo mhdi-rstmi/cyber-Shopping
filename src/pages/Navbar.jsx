@@ -87,11 +87,21 @@ const Navbar = () => {
                                 </ul>
                             </div>
                             <div className='flex justify-around mx-2 mt-8'>
-                                <Link to='/' className='text-3xl'>
-                                    <FaHeart />
+                                <Link to='/wishlist' className='text-3xl relative'>
+                                    <div className='absolute top-[-10px] right-[-10px] w-5 h-5 rounded-full bg-cyan-400 text-black text-center flex items-center justify-center'>
+                                        <p className='text-[10px]'>{allBookMarkProducts.length}</p>
+                                    </div>
+                                    {allBookMarkProducts.length > 0 ?
+                                        <FaHeart className="text-red-600" /> :
+                                        <IoMdHeartEmpty className='w-8 h-8 text-[#909090] cursor-pointer' onClick={() => handleLikeClick(product.id)} />}
                                 </Link>
-                                <Link className='text-3xl'>
-                                    <IoCartOutline />
+                                <Link to='/cart' className='text-3xl relative'>
+                                    <div className='absolute top-[-10px] right-[-10px] w-5 h-5 rounded-full bg-cyan-400 text-black text-center flex items-center justify-center'>
+                                        <p className='text-[10px]'>{cartProducts.length}</p>
+                                    </div>
+                                    {cartProducts.length > 0 ?
+                                        < FaShoppingCart className="text-red-600" /> :
+                                        <IoCartOutline className='w-8 h-8 text-[#909090] cursor-pointer' />}
                                 </Link>
                                 <Link className='text-3xl'>
                                     <CiUser />
